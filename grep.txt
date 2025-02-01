@@ -1,0 +1,7 @@
+# download text
+wget https://www.gutenberg.org/cache/epub/1513/pg1513.txt
+dos2unix pg1513.txt
+iconv -f UTF-8 -t ASCII//TRANSLIT pg1513.txt -o Romeo_and_Juliet.txt
+
+# check all characters in text: letters, punctuation (.,;:'"!?-) and []&_
+egrep '[^\\[\\]a-zA-Z .,;:'\''"?!&_-]' Romeo_and_Juliet.txt
