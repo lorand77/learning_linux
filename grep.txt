@@ -4,4 +4,8 @@ dos2unix pg1513.txt
 iconv -f UTF-8 -t ASCII//TRANSLIT pg1513.txt -o Romeo_and_Juliet.txt
 
 # check all characters in text: letters, punctuation (.,;:'"!?-) and []&_
+# TODO: fix []
 egrep '[^\\[\\]a-zA-Z .,;:'\''"?!&_-]' Romeo_and_Juliet.txt
+
+# get character names and appearences
+egrep '^[A-Z .'\'']+$' Romeo_and_Juliet.txt | egrep -v '^(ACT |THE PROLOGUE|THE TRAGEDY OF)' | sort | uniq -c | sort -nr
