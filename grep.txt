@@ -9,3 +9,9 @@ egrep '[^\\[\\]a-zA-Z .,;:'\''"?!&_-]' Romeo_and_Juliet.txt
 
 # get character names and appearences
 egrep '^[A-Z .'\'']+$' Romeo_and_Juliet.txt | egrep -v '^(ACT |THE PROLOGUE|THE TRAGEDY OF)' | sort | uniq -c | sort -nr
+
+# hacker speak
+cat Romeo_and_Juliet.txt | sed 's/[Aa]/4/g' | sed 's/[Ee]/3/g' | sed 's/[Ii]/1/g' | sed 's/[Oo]/0/g'
+
+# sed . > :
+cat Romeo_and_Juliet.txt | sed -E 's/^([A-Z '\'']+)\.$/\1:/'
