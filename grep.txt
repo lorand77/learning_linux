@@ -15,3 +15,11 @@ cat Romeo_and_Juliet.txt | sed 's/[Aa]/4/g' | sed 's/[Ee]/3/g' | sed 's/[Ii]/1/g
 
 # sed . > :
 cat Romeo_and_Juliet.txt | sed -E 's/^([A-Z]+[A-Z '\'']+)\.$/\1:/'
+
+
+
+# download text
+wget https://imsdb.com/scripts/Star-Wars-A-New-Hope.html
+
+# get character names and appearences
+egrep '^ {37}[A-Z][A-Z '\'']+$' sw4.txt | sed -E 's/^ {37}//' | sort | uniq -c | sort -nr | head
