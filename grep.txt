@@ -23,3 +23,6 @@ wget https://imsdb.com/scripts/Star-Wars-A-New-Hope.html
 
 # get character names and appearences
 egrep '^ {37}[A-Z][A-Z '\'']+$' sw4.txt | sed -E 's/^ {37}//' | sort | uniq -c | sort -nr | head
+
+# count words
+cat sw4.txt | tr ' "()!?.,;:0-9[]/' '\n' | tr 'A-Z' 'a-z' | grep -v '^$' | grep -v '^-$' | sed 's/'\''s//' | sort | uniq -c | sort -n
