@@ -17,6 +17,9 @@ cat Romeo_and_Juliet.txt | sed 's/[Aa]/4/g' | sed 's/[Ee]/3/g' | sed 's/[Ii]/1/g
 cat Romeo_and_Juliet.txt | sed -E 's/^([A-Z]+[A-Z '\'']+)\.$/\1:/'
 
 
+# letter frequency (all works of Shakespeare)
+fold -w 1 pg100.txt | tr 'A-Z' 'a-z' | sort | uniq -c | sort -nr | grep '[a-z]'
+
 
 # download text
 wget https://imsdb.com/scripts/Star-Wars-A-New-Hope.html
