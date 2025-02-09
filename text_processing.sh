@@ -26,3 +26,6 @@ egrep '^ {37}[A-Z][A-Z '\'']+$' sw4.txt | sed -E 's/^ {37}//' | sort | uniq -c |
 
 # count words
 cat sw4.txt | tr ' "()!?.,;:0-9[]/' '\n' | tr 'A-Z' 'a-z' | grep -v '^$' | grep -v '^-$' | sed 's/'\''s//' | sort | uniq -c | sort -n
+
+# letter frequency
+fold -w 1 sw4.txt | tr 'A-Z' 'a-z' | sort | uniq -c | sort -nr | grep '[a-z]'
