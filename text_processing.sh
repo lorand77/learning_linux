@@ -35,3 +35,6 @@ fold -w 1 sw4.txt | tr 'A-Z' 'a-z' | sort | uniq -c | sort -nr | grep '[a-z]'
 
 # cut
 ll | sed -E 's/ +/ /g'| cut -d ' ' -f9,5 | sed -E 's/(.*) (.*)/\2\t\1/'
+
+# paste
+ls -l > f1; ls -l > f2; paste f1 f2
