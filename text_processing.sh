@@ -32,3 +32,6 @@ cat sw4.txt | tr ' "()!?.,;:0-9[]/' '\n' | tr 'A-Z' 'a-z' | grep -v '^$' | grep 
 
 # letter frequency
 fold -w 1 sw4.txt | tr 'A-Z' 'a-z' | sort | uniq -c | sort -nr | grep '[a-z]'
+
+# cut
+ll | sed -E 's/ +/ /g'| cut -d ' ' -f9,5 | sed -E 's/(.*) (.*)/\2\t\1/'
