@@ -2,3 +2,4 @@
 
 NAME=Lorand
 echo "Hello $NAME!"
+echo "Hello ${NAME}!"
