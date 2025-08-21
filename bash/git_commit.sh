@@ -2,7 +2,7 @@
 
 git status
 
-echo -n "Proceed? y/n "
+echo -n "Proceed? [y/n] "
 read ANSWER
 if [[ "$ANSWER" == "y" ]]
 then
